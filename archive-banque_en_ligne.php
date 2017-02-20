@@ -18,7 +18,11 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
-			<?php while ( have_posts() ) : the_post(); ?>
+			<?php 
+			$banks_query = new WP_Query( array( 'p' => 372 ) );
+			while ( $banks_query->have_posts() ) : $banks_query->the_post(); 
+			
+			?>
 
 				<?php get_template_part( 'template-parts/content', 'banque_comparatif' ); ?>
 
@@ -29,7 +33,9 @@ get_header(); ?>
 					endif;
 				?>
 
-			<?php endwhile; // End of the loop. ?>
+			<?php endwhile; // End of the loop. 
+			wp_reset_postdata();
+			?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
