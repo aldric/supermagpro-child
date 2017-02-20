@@ -17,13 +17,10 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
-
 			<?php 
-			$banks_query = new WP_Query( array( 'p' => 372 ) );
+			$banks_query = new WP_Query( array( 'post_type' => 'banque_en_ligne', 'p' => 372 ) );
 			while ( $banks_query->have_posts() ) : $banks_query->the_post(); 
-			
 			?>
-
 				<?php get_template_part( 'template-parts/content', 'banque_comparatif' ); ?>
 
 				<?php
