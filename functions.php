@@ -33,6 +33,23 @@ add_action('widgets_init', function () {
 //[comparatif-banques]
 function banks_func($atts)
 {
-    return "foo and bar";
+    $posts = new WP_Query(array( 'post_type' => 'fiche_banque'));
+    $out = '';
+    //print_r($posts);
+   if ($posts->have_posts()) {
+       while ($posts->have_posts()) {
+           $posts->the_post();
+           $out .= get_field('bank_name_label');
+           $out .= '<br/>';
+          /*  $out = '<div class="film_box">
+               <h4>'. get_field('bank_name_label');.'</h4>';
+            $out .='</div>';*/
+       }
+   } else {
+       $out = "nothing to display";
+   } // no posts found
+
+    wp_reset_query();
+    return $out;
 }
 add_shortcode('comparatif-banques', 'banks_func');
