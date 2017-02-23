@@ -4,9 +4,9 @@
 </h3>
   <div class="pricing animated swing">
         <div>
-            <div class="c100 p<?php echo $eval_mean; ?> center green">
+            <div class="c100 p<?php echo $data->mean; ?> center green">
                 <span>
-                    <?php echo $eval_mean."%"; ?>
+                    <?php echo $data->mean."%"; ?>
                 </span>
                 <div class="slice">
                     <div class="bar"></div>
@@ -15,11 +15,11 @@
             </div>
         </div>
         <div class='title'>
-            <?php /*echo $eval_title;*/ echo $bank_name_label;?>
+            <?php /*echo $eval_title;*/ echo $data->name;?>
         </div>
         <div class='content'>
             <ul>
-                 <?php foreach ($eval_data as $row) : ?>
+                 <?php foreach ($data->eval_data as $row) : ?>
                 <li>
                     <div class="row">
                         <div class="col-xs-12 col-md-7">

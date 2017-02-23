@@ -32,13 +32,13 @@ if (! class_exists('Ranking_Widget')) {
             echo "<br />";
         }
 
-        public function widget($args, $instance)
-        {
-            $widget_id = "widget_" . $args["widget_id"];
-            $post_object = get_field('associated_bank');
-            if ($post_object) {
-                $id = $post_object->ID;
-                $bank_name_label = get_field('bank_name_label', $id);
+        public function get_ranking_data($p) {
+             $ranking_data = null;
+             if ($p) {
+                $id = $p->ID;
+                $name = get_field('bank_name_label', $id);
+                $ranking_data  = new RankingData($name, $id);
+                
                 if (have_rows('evaluation_criteres', $id)) {
                     $eval_count = 0;
                     $eval_sum = 0;
@@ -47,17 +47,41 @@ if (! class_exists('Ranking_Widget')) {
                         the_row();
                         $eval_sum += (int) get_sub_field('valeur_note', $id);
                         $eval_count++;
-                        array_push($eval_data, array(
+                        
+                        array_push($ranking_data->eval_data, array(
                         "label" => get_sub_field('label_critere', $id),
                         "description" => get_sub_field('description_critere', $id),
                         "note" => get_sub_field('valeur_note', $id)
                     ));
                     }
-                    $eval_title = get_field("evaluation_title", $id);
-                    $eval_mean = round($eval_sum / $eval_count);
-                    include(realpath(dirname(__FILE__)) . "/ranking.widget.view.php");
+                    $ranking_data->title = get_field("evaluation_title", $id);
+                    $ranking_data->mean = round($eval_sum / $eval_count);
                 }
-            }
+             }
+             return $ranking_data;
+        }
+
+        public function widget($args, $instance)
+        {
+            $widget_id = "widget_" . $args["widget_id"];
+            $post_object = get_field('associated_bank');
+            $data = $this->get_ranking_data($post_object);
+            if($data != null)
+                include(realpath(dirname(__FILE__)) . "/ranking.widget.view.php");
+        }
+        
+    }
+
+    class RankingData {
+        public $name;
+        public $title;
+        public $mean;
+        public $eval_data = array();
+
+        function __construct($name, $id)
+        {
+            $this->name = $name;
+            $this->id = $id;
         }
     }
 }

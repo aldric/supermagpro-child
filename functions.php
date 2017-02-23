@@ -12,8 +12,6 @@ function suprmagpro_child_enqueue_styles()
     wp_register_script('star-rating-js', $template_directory.'/star-rating/js/star-rating.min.js', array('jquery'), null, true);
     wp_register_style('star-rating-css', $template_directory.'/star-rating/css/star-rating.min.css', false, null, 'all');
 
-    wp_register_script('json-ld-js', $template_directory.'/main.js', array('jquery'), null, true);
-
     wp_enqueue_script('bootstrap-js');
     wp_enqueue_script('star-rating-js');
     wp_enqueue_script('json-ld-js');
@@ -30,20 +28,44 @@ add_action('widgets_init', function () {
     register_widget("Ranking_Widget");
 });
 
-//[comparatif-banques]
-function banks_func($atts)
+// function extract_data($p){
+
+// }
+
+//[bankranking display="all"]
+function bankranking_func($atts)
 {
-    $posts = new WP_Query(array( 'post_type' => 'fiche_banque'));
-    $out = '';
-    //print_r($posts);
+     $a = shortcode_atts( array(
+        'display' => 'all'
+    ), $atts );
+
+    $posts;
+    if($a['display'] == 'all') {
+        $posts = new WP_Query(array(
+            'post_type' => 'fiche_banque'
+         ));
+    } else {
+        $posts = new WP_Query(array(
+            'post_type' => 'fiche_banque',
+            'name' => $a['display']
+        ));
+    }
+    
+    $widget = new Ranking_Widget();
+
+    // echo 'Found ::';
+    //print_r($posts->post_count);
+    
+    global $post;
    if ($posts->have_posts()) {
        while ($posts->have_posts()) {
-           $posts->the_post();
-           $out .= get_field('bank_name_label');
-           $out .= '<br/>';
-          /*  $out = '<div class="film_box">
-               <h4>'. get_field('bank_name_label');.'</h4>';
-            $out .='</div>';*/
+            $posts->the_post();
+            
+            setup_postdata( $post ); 
+            $data = $widget->get_ranking_data($post);
+            if($data != null)
+                $out = include(realpath(dirname(__FILE__)) . "/widgets/ranking.widget.view.php");
+            wp_reset_postdata();
        }
    } else {
        $out = "nothing to display";
@@ -52,4 +74,4 @@ function banks_func($atts)
     wp_reset_query();
     return $out;
 }
-add_shortcode('comparatif-banques', 'banks_func');
+add_shortcode('bankranking', 'bankranking_func');
