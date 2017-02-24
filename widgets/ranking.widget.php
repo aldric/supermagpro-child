@@ -64,6 +64,8 @@ if (! class_exists('Ranking_Widget')) {
         public function widget($args, $instance)
         {
             $widget_id = "widget_" . $args["widget_id"];
+            $template = get_field('side_template', $widget_id);
+            $widget_title = get_field('widget_ranking_title', $widget_id);
             $post_object = get_field('associated_bank');
             $data = $this->get_ranking_data($post_object);
             if($data != null)

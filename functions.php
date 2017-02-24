@@ -32,11 +32,13 @@ add_action('widgets_init', function () {
 
 // }
 
+
 //[bankranking display="all"]
 function bankranking_func($atts)
 {
      $a = shortcode_atts( array(
-        'display' => 'all'
+        'display' => 'all',
+        'sort' => 'desc'
     ), $atts );
 
     $posts;
@@ -50,27 +52,31 @@ function bankranking_func($atts)
             'name' => $a['display']
         ));
     }
-    
-    $widget = new Ranking_Widget();
 
-    // echo 'Found ::';
-    //print_r($posts->post_count);
-    
+    $widget = new Ranking_Widget();
+    $rankings = array();
     global $post;
    if ($posts->have_posts()) {
        while ($posts->have_posts()) {
             $posts->the_post();
-            
             setup_postdata( $post ); 
             $data = $widget->get_ranking_data($post);
-            if($data != null)
-                $out = include(realpath(dirname(__FILE__)) . "/widgets/ranking.widget.view.php");
+            if($data != null) {
+                $rankings[$data->mean] = $data; 
+            }
             wp_reset_postdata();
        }
-   } else {
-       $out = "nothing to display";
-   } // no posts found
-
+   }
+    if($a['sort'] == 'desc') {
+        krsort($rankings);
+    } else {
+        ksort($rankings);
+    }
+    foreach ($rankings as $mean => $data) {
+        $out .= "<div class=\"col-md-4\">";
+        ob_start();
+        $out .= "</div>";
+    }
     wp_reset_query();
     return $out;
 }
