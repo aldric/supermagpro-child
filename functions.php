@@ -52,6 +52,7 @@ function bankranking_func($atts)
             'name' => $a['display']
         ));
     }
+    $out = "<div class=\"container-fluid\"><div class=\"row\">";
 
     $widget = new Ranking_Widget();
     $rankings = array();
@@ -75,8 +76,12 @@ function bankranking_func($atts)
     foreach ($rankings as $mean => $data) {
         $out .= "<div class=\"col-md-4\">";
         ob_start();
+        include(realpath(dirname(__FILE__)) . "/widgets/template-1.php");
+        $content = ob_get_clean();
+        $out .= $content;
         $out .= "</div>";
     }
+    $out .= "</div></div>";
     wp_reset_query();
     return $out;
 }

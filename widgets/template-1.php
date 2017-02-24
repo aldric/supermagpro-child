@@ -18,6 +18,7 @@
                  <?php foreach ($data->eval_data as $row) : ?>
                 <li>
                     <div class="row">
+                        <div class="col-xs-12 col-md-6">
                             <div>
                                 <strong>
                                     <?php echo $row['label']; ?>
@@ -30,6 +31,7 @@
                             </div>
 
                         </div>
+                        <div class="col-xs-12 col-md-6">
                             <input value="<?php echo $row['note']; ?>" class="rating-loading" data-rating />
                         </div>
                     </div>
