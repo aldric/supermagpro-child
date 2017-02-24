@@ -1,11 +1,4 @@
 <?php
-/**
- * Class for adding News Ticker
- *
- * @package AcmeThemes
- * @subpackage supermag
- * @since 1.0.0
- */
 if (! class_exists('Ranking_Widget')) {
     class Ranking_Widget extends WP_Widget
     {
