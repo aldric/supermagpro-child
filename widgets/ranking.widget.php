@@ -79,4 +79,7 @@ if (! class_exists('Ranking_Widget')) {
             $this->id = $id;
         }
     }
+    add_action('widgets_init', function () {
+        register_widget("Ranking_Widget");
+    });
 }

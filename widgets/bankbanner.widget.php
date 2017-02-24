@@ -56,4 +56,7 @@ if (! class_exists('BankBanner_Widget')) {
             $this->url = $url;
         }
     }
+    add_action('widgets_init', function () {
+        register_widget("BankBanner_Widget");
+    });
 }
