@@ -25,13 +25,14 @@ if (! class_exists('Ranking_Widget')) {
             echo "<br />";
         }
 
-        public function get_ranking_data($p) {
-             $ranking_data = null;
-             if ($p) {
+        public function get_ranking_data($p)
+        {
+            $ranking_data = null;
+            if ($p) {
                 $id = $p->ID;
                 $name = get_field('bank_name_label', $id);
                 $ranking_data  = new RankingData($name, $id);
-                
+
                 if (have_rows('evaluation_criteres', $id)) {
                     $eval_count = 0;
                     $eval_sum = 0;
@@ -40,7 +41,7 @@ if (! class_exists('Ranking_Widget')) {
                         the_row();
                         $eval_sum += (int) get_sub_field('valeur_note', $id);
                         $eval_count++;
-                        
+
                         array_push($ranking_data->eval_data, array(
                         "label" => get_sub_field('label_critere', $id),
                         "description" => get_sub_field('description_critere', $id),
@@ -50,8 +51,8 @@ if (! class_exists('Ranking_Widget')) {
                     $ranking_data->title = get_field("evaluation_title", $id);
                     $ranking_data->mean = round($eval_sum / $eval_count);
                 }
-             }
-             return $ranking_data;
+            }
+            return $ranking_data;
         }
 
         public function widget($args, $instance)
@@ -61,19 +62,44 @@ if (! class_exists('Ranking_Widget')) {
             $widget_title = get_field('widget_ranking_title', $widget_id);
             $post_object = get_field('associated_bank');
             $data = $this->get_ranking_data($post_object);
-            if($data != null)
+            $descendants =  $this->get_posts_children(get_the_ID());
+            echo '<pre>';
+            //print_r($p);
+            print_r($descendants);
+            echo '</pre>';
+            if ($data != null) {
                 include(realpath(dirname(__FILE__)) . "/ranking.widget.view.php");
+            }
         }
-        
+
+        public function get_posts_children($parent_id)
+        {
+            $children = array();
+    // grab the posts children
+    $posts = get_posts(array( 'numberposts' => -1, 'post_status' => 'publish', 'post_type' => 'microsite', 'post_parent' => $parent_id, 'suppress_filters' => false ));
+    // now grab the grand children
+    foreach ($posts as $child) {
+        // recursion!! hurrah
+        $gchildren = get_posts_children($child->ID);
+        // merge the grand children into the children array
+        if (!empty($gchildren)) {
+            $children = array_merge($children, $gchildren);
+        }
+    }
+    // merge in the direct descendants we found earlier
+    $children = array_merge($children, $posts);
+            return $children;
+        }
     }
 
-    class RankingData {
+    class RankingData
+    {
         public $name;
         public $title;
         public $mean;
         public $eval_data = array();
 
-        function __construct($name, $id)
+        public function __construct($name, $id)
         {
             $this->name = $name;
             $this->id = $id;
