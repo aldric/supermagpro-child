@@ -23,14 +23,14 @@
  Text Domain:  supermagpro-child
 
 */
-.breadcrumb {
-    padding: 8px 15px;
+span.breadcrumb {
     margin-bottom: 0px; 
     list-style: none;
     background-color: #f13600;
     border-radius: 4px;
+    line-height: 28px;
+    margin-right: 10px;
 }
-
 #supermag-breadcrumbs .breadcrumb-container {
     line-height: 28px;
 }
@@ -646,3 +646,4 @@ div.pricing.animated.swing div.col-xs-12.col-md-6 {
   padding-right:0px;
 
 }
+

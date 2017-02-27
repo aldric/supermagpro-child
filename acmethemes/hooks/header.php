@@ -549,7 +549,7 @@ if ( ! function_exists( 'supermag_before_content' ) ) :
         if( 'disable' != $supermag_customizer_all_values['supermag-breadcrumb-options'] ){
             if( 'advanced' == $supermag_customizer_all_values['supermag-breadcrumb-options'] ){
                 if( function_exists('bcn_display')){
-                    echo '<div id="supermag-breadcrumbs"><div class="breadcrumb-container">';
+                    echo '<div id="supermag-breadcrumbs"><span class="breadcrumb">Vous &ecirc;tes</span><div class="breadcrumb-container">';
                     bcn_display();
                     echo "</div></div>";
                 }
