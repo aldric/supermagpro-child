@@ -1,16 +1,16 @@
 <?php
-if (! class_exists('Ranking_Widget')) {
-    class Ranking_Widget extends WP_Widget
+if (! class_exists('BankHierarchy_Widget')) {
+    class BankHierarchy_Widget extends WP_Widget
     {
         public function __construct()
         {
             parent::__construct(
                 /*Base ID of your widget*/
-                    'agt_bank_ranking',
+                    'agt_bank_hierarchy',
                     /*Widget name will appear in UI*/
-                    __('AGT Bank Ranking Widget', 'supermagpro-child'),
+                    __('AGT Bank Hierarchy Widget', 'supermagpro-child'),
                     /*Widget description*/
-                    array( 'description' => __('Bank Ranking', 'supermagpro-child'), )
+                    array( 'description' => __('Bank Hierarchy', 'supermagpro-child'), )
                 );
         }
 
@@ -58,30 +58,46 @@ if (! class_exists('Ranking_Widget')) {
         public function widget($args, $instance)
         {
             $widget_id = "widget_" . $args["widget_id"];
-            $template = get_field('side_template', $widget_id);
-            $widget_title = get_field('widget_ranking_title', $widget_id);
-            $post_object = get_field('associated_bank');
-            $data = $this->get_ranking_data($post_object);
+            global $post;
+            $top = get_post(end(get_post_ancestors($post->ID)));
+            $descendants =  $this->get_posts_children($top);
+            echo '<pre>';
+            print_r($descendants);
+            echo '</pre>';
             if ($data != null) {
                 include(realpath(dirname(__FILE__)) . "/ranking.widget.view.php");
             }
         }
-    }
 
-    class RankingData
-    {
-        public $name;
-        public $title;
-        public $mean;
-        public $eval_data = array();
-
-        public function __construct($name, $id)
+        public function get_posts_children($p)
         {
-            $this->name = $name;
-            $this->id = $id;
+            $children = array();
+            $id = $p->ID;
+            $posts = get_posts(array( 'numberposts' => -1, 'post_status' => 'publish', 'post_type' => 'banque_en_ligne', 'post_parent' => $id, 'suppress_filters' => false, 'orderby' => 'menu_order' ));
+            $parent = new HierarchicalData($id, get_the_title($p), get_permalink($p));
+            foreach ($posts as $child) {
+                array_push($parent->children, $this->get_posts_children($child));
+            }
+            return $parent;
         }
     }
+
+    class HierarchicalData
+    {
+        public $id;
+        public $title;
+        public $permalink;
+        public $children = array();
+
+        public function __construct($id, $title, $permalink)
+        {
+            $this->id = $id;
+            $this->title = $title;
+            $this->permalink = $permalink;
+        }
+    }
+
     add_action('widgets_init', function () {
-        register_widget("Ranking_Widget");
+        register_widget("BankHierarchy_Widget");
     });
 }

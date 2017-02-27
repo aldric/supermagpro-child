@@ -2,6 +2,7 @@
 
 include(realpath(dirname(__FILE__)) . "/widgets/ranking.widget.php");
 include(realpath(dirname(__FILE__)) . "/widgets/bankbanner.widget.php");
+include(realpath(dirname(__FILE__)) . "/widgets/BankHierarchy.widget.php");
 include(realpath(dirname(__FILE__)) . "/shortcodes/bankranking.php");
 
 function suprmagpro_child_enqueue_styles()
@@ -27,14 +28,14 @@ function suprmagpro_child_enqueue_styles()
 
 add_action('wp_enqueue_scripts', 'suprmagpro_child_enqueue_styles', 15);
 
-if ( function_exists('register_sidebar') ) {
-    register_sidebar( array(
-		'name' => 'AGT : Top banner',
-		'id' => 'sidebar-99',
-		'description' => 'Display automatic bank banner',
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget' => '</div>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
-	) );
+if (function_exists('register_sidebar')) {
+    register_sidebar(array(
+        'name' => 'AGT : Top banner',
+        'id' => 'sidebar-99',
+        'description' => 'Display automatic bank banner',
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 class="widget-title">',
+        'after_title' => '</h3>',
+    ));
 }
