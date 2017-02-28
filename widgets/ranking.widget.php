@@ -1,4 +1,5 @@
 <?php
+
 if (! class_exists('Ranking_Widget')) {
     class Ranking_Widget extends WP_Widget
     {
@@ -21,7 +22,7 @@ if (! class_exists('Ranking_Widget')) {
 
         public function form($instance)
         {
-           // $title = esc_attr($instance["title"]);
+            // $title = esc_attr($instance["title"]);
             echo "<br />";
         }
 
@@ -64,6 +65,16 @@ if (! class_exists('Ranking_Widget')) {
             $data = $this->get_ranking_data($post_object);
             if ($data != null) {
                 include(realpath(dirname(__FILE__)) . "/ranking.widget.view.php");
+                $review = new BankReviewJson($data->name,
+                                             "Villeneuve d'asq, Lille cedex 9",
+                                             "0680606073",
+                                             "http://www.example.com/monabanq.jpg",
+                                             "Le banque en ligne au meilleur prix",
+                                             "https://topbanque.net/linkAffiliate",
+                                             round($data->mean / 20, 2),
+                                             "Revue de la banque en ligne Monabanq.",
+                                             "Ici on pourrait mettre le recap en une ligne de notre avis");
+                echo '<script type = "application/ld+json" >'.$review->toJson().'</script>';
             }
         }
     }
