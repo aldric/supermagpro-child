@@ -61,7 +61,7 @@ global $supermag_customizer_all_values;
 				$single_thumb = 'single-thumb-full';
 				$single_no_image = $supermag_no_image_large;
 			}
-			?>
+		/*	?>
 			<figure class="single-thumb <?php echo esc_attr( $single_thumb )?>">
 				<?php
 				$supermag_video_url = get_post_meta( get_the_ID(), 'supermag_video_url', true );
@@ -86,7 +86,7 @@ global $supermag_customizer_all_values;
 				?>
 			</figure>
 		</div>
-	<?php
+	<?php */
 	}
 	?>
 	<div class="entry-content">

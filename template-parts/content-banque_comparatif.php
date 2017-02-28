@@ -19,7 +19,7 @@ global $supermag_customizer_all_values;
 	if( 1 != $supermag_hide_single_featured_image ){
 		?>
 		<div class="single-feat clearfix">
-			<?php
+			<?php /*
 			$supermag_no_image_large = $supermag_customizer_all_values['supermag-no-image-large'];
 			$thumbnail = 'large';
 			$video_width = 840;
@@ -51,7 +51,7 @@ global $supermag_customizer_all_values;
 				?>
 			</figure>
 		</div>
-		<?php
+		<?php */
 	}
 	?>
 	<div class="entry-content">

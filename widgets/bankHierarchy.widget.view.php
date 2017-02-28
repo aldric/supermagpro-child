@@ -1,6 +1,6 @@
 <div>
   <h3 class="widget-title">
-    <span>TODO TITLE</span>
+    <span>Catalogue 2do</span>
 </h3>
   <div class="widget-custom">
       <?php 
