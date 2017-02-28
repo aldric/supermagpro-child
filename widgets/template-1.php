@@ -1,5 +1,6 @@
  <div class="pricing animated swing">
         <div>
+       <?php /*  <input value="<?php echo $data->mean; ?>" class="rating-loading" data-rating-xl /> */ ?>
             <div class="c100 p<?php echo $data->mean; ?> center green">
                 <span>
                     <?php echo $data->mean."%"; ?>
@@ -46,5 +47,6 @@
     <script>
     jQuery(document).on('ready', function () {
         jQuery('input[data-rating]').rating({ displayOnly: true, step: 1, min: 0, max: 100, size: 'xxs' });
+        /*jQuery('input[data-rating-xl]').rating({ displayOnly: true, step: 1, min: 0, max: 100, size: 'md', stars : 4 });*/
     });
 </script>
