@@ -21,51 +21,26 @@ if (! class_exists('BankHierarchy_Widget')) {
 
         public function form($instance)
         {
-            $title = esc_attr($instance["title"]);
+           // $title = esc_attr($instance["title"]);
             echo "<br />";
-        }
-
-        public function get_ranking_data($p)
-        {
-            $ranking_data = null;
-            if ($p) {
-                $id = $p->ID;
-                $name = get_field('bank_name_label', $id);
-                $ranking_data  = new RankingData($name, $id);
-
-                if (have_rows('evaluation_criteres', $id)) {
-                    $eval_count = 0;
-                    $eval_sum = 0;
-                    $eval_data = array();
-                    while (have_rows('evaluation_criteres', $id)) {
-                        the_row();
-                        $eval_sum += (int) get_sub_field('valeur_note', $id);
-                        $eval_count++;
-
-                        array_push($ranking_data->eval_data, array(
-                        "label" => get_sub_field('label_critere', $id),
-                        "description" => get_sub_field('description_critere', $id),
-                        "note" => get_sub_field('valeur_note', $id)
-                    ));
-                    }
-                    $ranking_data->title = get_field("evaluation_title", $id);
-                    $ranking_data->mean = round($eval_sum / $eval_count);
-                }
-            }
-            return $ranking_data;
         }
 
         public function widget($args, $instance)
         {
             $widget_id = "widget_" . $args["widget_id"];
             global $post;
-            $top = get_post(end(get_post_ancestors($post->ID)));
-            $descendants =  $this->get_posts_children($top);
-            echo '<pre>';
-            print_r($descendants);
-            echo '</pre>';
-            if ($data != null) {
-                include(realpath(dirname(__FILE__)) . "/ranking.widget.view.php");
+            $current_id = $post->ID;
+            $top = $post;
+            $parents = get_post_ancestors($current_id);
+           // echo 'parents :'.count($parents);
+            if(count($parents) > 0) {
+                $top_id = end($parents);
+                $top = get_post($top_id);
+            }
+          //  echo 'type :'.get_post_type($top);
+            $model =  $this->get_posts_children($top);
+            if ( get_post_type($top) == 'banque_en_ligne' && $model != null && count($model->children) > 0) {
+                include(realpath(dirname(__FILE__)) . "/bankHierarchy.widget.view.php");
             }
         }
 

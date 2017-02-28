@@ -554,10 +554,12 @@ if ( ! function_exists( 'supermag_before_content' ) ) :
                     echo "</div></div>";
                 }
                 else{
+                    
                     supermag_breadcrumbs();
                 }
             }
             else{
+                
                 supermag_breadcrumbs();
             }
         }

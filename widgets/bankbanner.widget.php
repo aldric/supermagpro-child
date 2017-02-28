@@ -21,7 +21,7 @@ if (! class_exists('BankBanner_Widget')) {
 
         public function form($instance)
         {
-            $title = esc_attr($instance["title"]);
+           // $title = esc_attr($instance["title"]);
             echo "<br />";
         }
 
@@ -30,19 +30,21 @@ if (! class_exists('BankBanner_Widget')) {
             $widget_id = "widget_" . $args["widget_id"];
             $banners = array();
             $post_object = get_field('associated_bank');
-            $id = $post_object->ID;
-            if (have_rows('bank_banners', $id)) {
-                while (have_rows('bank_banners', $id)) {
-                    the_row();
-                    $img = get_sub_field('banner_image', $id);
-                    $url = get_sub_field('banner_link', $id);
-                    array_push($banners, new BannerData($img, $url));
+            if($post_object != null) {
+                $id = $post_object->ID;
+                if (have_rows('bank_banners', $id)) {
+                    while (have_rows('bank_banners', $id)) {
+                        the_row();
+                        $img = get_sub_field('banner_image', $id);
+                        $url = get_sub_field('banner_link', $id);
+                        array_push($banners, new BannerData($img, $url));
+                    }
                 }
-            }
-            if(count($banners) > 0 ) {
-                $key = array_rand($banners);
-                $banner = $banners[$key];
-                include(realpath(dirname(__FILE__)) . "/bankbanner.widget.view.php");
+                if(count($banners) > 0 ) {
+                    $key = array_rand($banners);
+                    $banner = $banners[$key];
+                    include(realpath(dirname(__FILE__)) . "/bankbanner.widget.view.php");
+                }
             }
         }
     }

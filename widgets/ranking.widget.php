@@ -21,7 +21,7 @@ if (! class_exists('Ranking_Widget')) {
 
         public function form($instance)
         {
-            $title = esc_attr($instance["title"]);
+           // $title = esc_attr($instance["title"]);
             echo "<br />";
         }
 
