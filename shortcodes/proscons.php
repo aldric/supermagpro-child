@@ -45,7 +45,7 @@ function proscons_func()
     foreach ($multiple as $value) {
         $key = $multiple->key();
         $pro = $key[0];
-        $out .= "<div class=\"row row-eq-height\">";
+        $out .= "<div class=\"row\">";
         $out .= '<div class="'.$class.'">'.$value[0].'</div>';
         $out .= '<div class="'.$class.'">'.$value[1].'</div>';
         $out .= '</div>';
