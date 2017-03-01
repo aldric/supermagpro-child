@@ -36,10 +36,10 @@ function proscons_func()
     $multiple->attachIterator($iterator2);
    
    if(count($pros) > 0 ) {
-       $out .= '<div class="'.$class.'">Points forts</div>';
+       $out .= '<div class="'.$class.' bg-success pc-tab"><h3>Points forts</h3></div>';
    }
    if(count($cons) > 0 ) {
-       $out .= '<div class="'.$class.'">Points faibles</div>';
+       $out .= '<div class="'.$class.' bg-warning pc-tab"><h3>Points faibles</h3></div>';
    }
 
     foreach ($multiple as $value) {

@@ -24,6 +24,9 @@
 
 */
 /* First level of nav */
+.pc-tab {
+  padding: 5px 20px;
+}
 .bs-docs-sidenav {
   margin-top: 20px;
   margin-bottom: 20px;
