@@ -16,9 +16,11 @@ function suprmagpro_child_enqueue_styles()
     wp_register_script('star-rating-js', $template_directory.'/star-rating/js/star-rating.min.js', array('jquery'), null, true);
     wp_register_style('star-rating-css', $template_directory.'/star-rating/css/star-rating.min.css', false, null, 'all');
 
+	wp_register_script('main-js', $template_directory.'/main.js', null, null, true);
+	
     wp_enqueue_script('bootstrap-js');
     wp_enqueue_script('star-rating-js');
-    wp_enqueue_script('json-ld-js');
+    wp_enqueue_script('main-js');
 
     wp_enqueue_style('bootstrap-css');
     wp_enqueue_style('star-rating-css');
