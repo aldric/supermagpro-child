@@ -79,8 +79,8 @@ class BankOffer {
 
     public function toData() {
         return array(
-            "@type" => $thid->type;
-            "name" => $thid->name;
+            "@type" => $thid->type,
+            "name" => $thid->name,
             "url" => $thid->url;
         );
     }

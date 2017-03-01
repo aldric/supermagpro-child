@@ -3,7 +3,7 @@
         "@type": "Service",
         "serviceType": "Banque en ligne",
         "provider": {
-            "@type": "LocalBusiness",
+            "@type": "BankOrCreditUnion",
             "address": "Monabanq Lille cedex 9",
             "telephone": "0680606073",
             "name": "Monabanq",
