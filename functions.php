@@ -1,11 +1,6 @@
 <?php
 
-include(realpath(dirname(__FILE__)) . "/widgets/ranking.widget.php");
-include(realpath(dirname(__FILE__)) . "/widgets/bankbanner.widget.php");
-include(realpath(dirname(__FILE__)) . "/widgets/BankHierarchy.widget.php");
-include(realpath(dirname(__FILE__)) . "/shortcodes/bankranking.php");
-include(realpath(dirname(__FILE__)) . "/shortcodes/proscons.php");
-include(realpath(dirname(__FILE__)) ."/class/BankReviewJson.php");
+
 
 function suprmagpro_child_enqueue_styles()
 {
@@ -14,17 +9,12 @@ function suprmagpro_child_enqueue_styles()
     wp_register_script('bootstrap-js', '//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', array('jquery'), null, true);
     wp_register_style('bootstrap-css', '//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', false, null, 'all');
 
-    wp_register_script('star-rating-js', $template_directory.'/star-rating/js/star-rating.min.js', array('jquery'), null, true);
-    wp_register_style('star-rating-css', $template_directory.'/star-rating/css/star-rating.min.css', false, null, 'all');
-
 	wp_register_script('main-js', $template_directory.'/main.js', null, null, true);
 	
     wp_enqueue_script('bootstrap-js');
-    wp_enqueue_script('star-rating-js');
     wp_enqueue_script('main-js');
 
     wp_enqueue_style('bootstrap-css');
-    wp_enqueue_style('star-rating-css');
     $parent_style = 'supermagpro-parent-style';
     wp_enqueue_style($parent_style, get_template_directory_uri() . '/style.css');
     wp_enqueue_style('supermagpro-child-style', $template_directory. '/style.css', array( $parent_style ));
