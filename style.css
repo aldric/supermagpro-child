@@ -95,7 +95,16 @@ span.breadcrumb {
 #supermag-breadcrumbs .breadcrumb-container {
     line-height: 28px;
 }
-
+div.breadcrumb-container span[property="name"] {
+  display: inline-block;
+    padding: 0;
+    margin-top: -3px;
+    vertical-align: middle;
+    max-width: 160px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 .rating-container {
     text-align: center;
 }
