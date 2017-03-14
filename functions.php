@@ -1,18 +1,27 @@
 <?php
 
-
+//Dequeue JavaScripts
+function project_dequeue_unnecessary_scripts()
+{
+    wp_dequeue_script('supermag-custom');
+    wp_deregister_script('supermag-custom');
+}
+add_action('wp_print_scripts', 'project_dequeue_unnecessary_scripts');
 
 function suprmagpro_child_enqueue_styles()
 {
     $template_directory = get_stylesheet_directory_uri();
 
+    wp_register_script('custom-agt-js', $template_directory . '/assets/js/supermag-custom.js', array('jquery'), '4.0', 1);
+
     wp_register_script('bootstrap-js', '//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', array('jquery'), null, true);
     wp_register_style('bootstrap-css', '//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', false, null, 'all');
 
-	wp_register_script('main-js', $template_directory.'/main.js', null, null, true);
-	
+    wp_register_script('main-js', $template_directory.'/main.js', null, null, true);
+
     wp_enqueue_script('bootstrap-js');
     wp_enqueue_script('main-js');
+    wp_enqueue_script('custom-agt-js');
 
     wp_enqueue_style('bootstrap-css');
     $parent_style = 'supermagpro-parent-style';
