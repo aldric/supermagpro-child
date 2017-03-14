@@ -433,41 +433,41 @@ $custom_css .= "
 li.menu-bforbank {
     background-image: url('{$template_directory}/menu/32x32/bforbank.png');
     background-repeat: no-repeat;
-    background-position: left;
+    background-position: 5px;
     background-position-y: center;
 }
 
 li.menu-boursorama {
     background-image: url('{$template_directory}/menu/32x32/boursorama.png');
     background-repeat: no-repeat;
-    background-position: left;
+    background-position: 5px;
     background-position-y: center;
 }
 
 li.menu-fortuneo {
   background-image: url('{$template_directory}/menu/32x32/fortuneo.png');
   background-repeat: no-repeat;
-  background-position: left;
+  background-position: 5px;
   background-position-y: center;
 }
 
 li.menu-hellobank {
   background-image: url('{$template_directory}/menu/32x32/hellobank.png');
   background-repeat: no-repeat;
-  background-position: left;
+  background-position: 5px;
   background-position-y: center;
 }
 
 li.menu-ingdirect {
   background-image: url('{$template_directory}/menu/32x32/ingdirect.png');
   background-repeat: no-repeat;
-  background-position: left;
+  background-position: 5px;
   background-position-y: center;
 }
 li.menu-monabanq {
   background-image: url('{$template_directory}/menu/32x32/monabanq.png');
   background-repeat: no-repeat;
-  background-position: left;
+  background-position: 5px;
   background-position-y: center;
 }
 ";

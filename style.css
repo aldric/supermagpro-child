@@ -716,11 +716,11 @@ div.pricing.animated.swing div.col-xs-12.col-md-6 {
   padding-right:0px;
 
 }
-.slicknav_nav li.menu-bforbank,
-.slicknav_nav li.menu-boursorama,
-.slicknav_nav li.menu-fortuneo,
-.slicknav_nav li.menu-hellobank,
-.slicknav_nav li.menu-ingdirect,
-.slicknav_nav li.menu-monabanq {
+li.menu-bforbank,
+li.menu-boursorama,
+li.menu-fortuneo,
+li.menu-hellobank,
+li.menu-ingdirect,
+li.menu-monabanq {
   padding-left: 37px;
 }
