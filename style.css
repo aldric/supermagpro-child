@@ -111,9 +111,7 @@ div.breadcrumb-container span[property="name"] {
 .pricing ul li div {
     text-align: center;
 }
-.pricing .c100.center {
-    top: 20px;
-}
+
 /*Tiles over efects*/
 .hovereffect {
   width: 100%;
@@ -193,8 +191,7 @@ div.breadcrumb-container span[property="name"] {
 }
 
 /*pricing table*/
-.pricing {
-  /*background: #3498db;*/
+/*.pricing {
   background: #005A8A;
   width: auto;
   color: #fff;
@@ -205,7 +202,6 @@ div.breadcrumb-container span[property="name"] {
 }
 .pricing .thumbnail {
   background: #fff;
-  /* IE Fall */
   background: rgba(255, 255, 255, 0.2);
   display: block;
   width: 90px;
@@ -229,7 +225,6 @@ div.breadcrumb-container span[property="name"] {
   font-weight: 700;
 }
 .pricing .content {
-  /*display: none;*/
   padding-bottom: 10px;
 }
 .pricing .content .sub-title {
@@ -248,9 +243,7 @@ div.breadcrumb-container span[property="name"] {
   color: #666;
   font-size: 14px;
 }
-.pricing .content ul li {
-  padding: 10px 20px;
-}
+
 .pricing .content ul li:nth-child(2n) {
   background: #f3f3f3;
 }
@@ -268,7 +261,6 @@ div.breadcrumb-container span[property="name"] {
 .pricing .content a {
   display: block;
   background: #2980b9;
-  /*max-width: 80px;*/
   margin: 0 auto;
   margin-top: 10px;
   padding: 10px 15px;
@@ -286,12 +278,10 @@ white-space: nowrap;
 }
 .pricing .content a:hover {
   background: #34495e;
-  /* IE Fallback */
   background: rgba(52, 73, 94, 0.7);
 }
 .clickMe {
   background: #fff;
-  /* IE Fallback */
   background: rgba(255, 255, 255, 0.8);
   position: absolute;
   top: 180px;
@@ -315,9 +305,8 @@ white-space: nowrap;
   border-top: 5px solid transparent;
   border-bottom: 5px solid transparent;
   border-left: 5 solid #fff;
-  /* IE Fallback */
   border-left: 5px solid rgba(255, 255, 255, 0.8);
-}
+}*/
 
 /*css circle*/
 .rect-auto, .c100.p51 .slice, .c100.p52 .slice, .c100.p53 .slice, .c100.p54 .slice, .c100.p55 .slice, .c100.p56 .slice, .c100.p57 .slice, .c100.p58 .slice, .c100.p59 .slice, .c100.p60 .slice, .c100.p61 .slice, .c100.p62 .slice, .c100.p63 .slice, .c100.p64 .slice, .c100.p65 .slice, .c100.p66 .slice, .c100.p67 .slice, .c100.p68 .slice, .c100.p69 .slice, .c100.p70 .slice, .c100.p71 .slice, .c100.p72 .slice, .c100.p73 .slice, .c100.p74 .slice, .c100.p75 .slice, .c100.p76 .slice, .c100.p77 .slice, .c100.p78 .slice, .c100.p79 .slice, .c100.p80 .slice, .c100.p81 .slice, .c100.p82 .slice, .c100.p83 .slice, .c100.p84 .slice, .c100.p85 .slice, .c100.p86 .slice, .c100.p87 .slice, .c100.p88 .slice, .c100.p89 .slice, .c100.p90 .slice, .c100.p91 .slice, .c100.p92 .slice, .c100.p93 .slice, .c100.p94 .slice, .c100.p95 .slice, .c100.p96 .slice, .c100.p97 .slice, .c100.p98 .slice, .c100.p99 .slice, .c100.p100 .slice {
