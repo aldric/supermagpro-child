@@ -14,12 +14,17 @@ function suprmagpro_child_enqueue_styles()
 
     wp_register_script('custom-agt-js', $template_directory . '/assets/js/supermag-custom.js', array('jquery'), '4.0', 1);
 
-    wp_register_script('bootstrap-js', '//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', array('jquery'), null, true);
-    wp_register_style('bootstrap-css', '//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', false, null, 'all');
+   //wp_register_script('bootstrap-js', '//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', array('jquery'), null, true);
+   //wp_register_style('bootstrap-css', '//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', false, null, 'all');
+  
+    wp_register_script('bootstrap-js', '//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js', array('jquery', 'tether-js'), null, true);
+    wp_register_script('tether-js', '//cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js', array('jquery'), null, true);
+    wp_register_style('bootstrap-css', '//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css', false, null, 'all');
 
     wp_register_script('main-js', $template_directory.'/main.js', null, null, true);
 
     wp_enqueue_script('bootstrap-js');
+    wp_enqueue_script('tether-js');
     wp_enqueue_script('main-js');
     wp_enqueue_script('custom-agt-js');
 
