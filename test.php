@@ -4,26 +4,21 @@
   <body>
 
 <?php
-require_once("class/BankReviewJson.php");
+// require_once("class/BankReviewJson.php");
 
-$review = new BankReviewJson("Monabanq",
-                             "Villeneuve d'asq, Lille cedex 9",
-                             "0680606073",
-                             "http://www.example.com/monabanq.jpg",
-                             "Le banque en ligne au meilleur prix",
-                             "https://topbanque.net/linkAffiliate",
-                             "4.6",
-                             "Revue de la banque en ligne Monabanq.",
-                             "Ici on pourrait mettre le recap en une ligne de notre avis");
-echo '<pre>';
-echo $review->toJson();
-echo '</pre>';
+// $review = new BankReviewJson("Monabanq",
+//                              "Villeneuve d'asq, Lille cedex 9",
+//                              "0680606073",
+//                              "http://www.example.com/monabanq.jpg",
+//                              "Le banque en ligne au meilleur prix",
+//                              "https://topbanque.net/linkAffiliate",
+//                              "4.6",
+//                              "Revue de la banque en ligne Monabanq.",
+//                              "Ici on pourrait mettre le recap en une ligne de notre avis");
+// echo '<pre>';
+// echo $review->toJson();
+// echo '</pre>';
+echo '{"60":{"name":"Boursorama","title":"","address":"","icon":"http:\/\/localhost:8080\/topbanque\/wp-content\/uploads\/2016\/10\/boursorama-logo.png","image":"http:\/\/localhost:8080\/topbanque\/wp-content\/uploads\/2017\/02\/credit-agricole-logo.png","holding_image":"http:\/\/localhost:8080\/topbanque\/wp-content\/uploads\/2017\/02\/credit-mutuel-arkea.jpg","review_link":"","review_link_text":"Voir la revue compl\u00e8te","holding_label":"Appartient au groupe","holding_name":"Soci\u00e9t\u00e9 G\u00e9n\u00e9rale","customer_count_label":"Nombre de clients","customer_count":"1.000.000","welcome_offer":"80\u20ac offerts","minimum_wadge":"sans condition de revenus","credit_card":"1.000.000","young_offer":"1","prof_account":"1","saving_account":"1","revolving_credit":"1","mortgage":"1","credit_rebuy":"1","life_insurance":"1","car_insurance":"0","home_insurance":"0","other_insurance":"1","stock":"1","mean":60,"eval_data":[{"label":"Service Client","description":"dsd asdsa dasdsad","note":"100"},{"label":"Application","description":"dsad asdsa das","note":"20"},{"label":"Carte de credit","description":"a sd sad sad asd","note":"60"}],"id":235},"77":{"name":"HelloBank","title":"","address":"","icon":null,"image":false,"holding_image":null,"review_link":null,"review_link_text":null,"holding_label":"Appartient au groupe","holding_name":"BNP Paribas","customer_count_label":"Nombre de clients","customer_count":"300.000","welcome_offer":"80\u20ac offerts","minimum_wadge":"1000\u20ac de revenus mensuels ou 5000\u20ac sur un compte","credit_card":"300.000","young_offer":"1","prof_account":"0","saving_account":"1","revolving_credit":"1","mortgage":"1","credit_rebuy":"1","life_insurance":"0","car_insurance":"1","home_insurance":"1","other_insurance":"1","stock":"1","mean":77,"eval_data":[{"label":"Service Client","description":"dsd sdas dsad","note":"100"},{"label":"Application","description":"dsd sadsa dsa","note":"50"},{"label":"Carte de credit","description":"ds gf dgfg","note":"80"}],"id":242},"80":{"name":"BforBank","title":"sdsdsdsds","address":"","icon":null,"image":false,"holding_image":null,"review_link":null,"review_link_text":null,"holding_label":"Appartient au groupe","holding_name":"Cr\u00e9dit Agricole","customer_count_label":"Nombre de clients","customer_count":"120.000","welcome_offer":"80\u20ac offerts + 50\u20ac pour livret \u00e9pargne","minimum_wadge":"1.600\u20ac","credit_card":"120.000","young_offer":"0","prof_account":"0","saving_account":"1","revolving_credit":"1","mortgage":"0","credit_rebuy":"0","life_insurance":"1","car_insurance":"0","home_insurance":"0","other_insurance":"0","stock":"1","mean":80,"eval_data":[{"label":"Service Client","description":"sd sdas dsa as dsa","note":"50"},{"label":"Application","description":"sd sdfd fdfsd","note":"100"},{"label":"Cate de credit","description":"gf gfdgfdgfdgfdgd","note":"90"}],"id":243},"92":{"name":"Fortuneo","title":"Notre avis","address":"23 rue ramey, 75018 Paris","icon":"http:\/\/localhost:8080\/topbanque\/wp-content\/uploads\/2016\/10\/fortuneo-favicon-196x196.png","image":"http:\/\/localhost:8080\/topbanque\/wp-content\/uploads\/2016\/10\/ing-logo.hd_.png","holding_image":"http:\/\/localhost:8080\/topbanque\/wp-content\/uploads\/2016\/10\/societe-generale-logo.png","review_link":"http:\/\/localhost:8080\/topbanque\/banque-en-ligne\/fortuneo\/","review_link_text":"Voir la revue compl\u00e8te","holding_label":"Appartient au groupe","holding_name":"ca c du groupe","customer_count_label":"Nombre de clients","customer_count":"4 000 000","welcome_offer":"200\u20ac offert tous les mois pendant 5 ans","minimum_wadge":"50\u20ac par mois","credit_card":"4 000 000","young_offer":"1","prof_account":"0","saving_account":"1","revolving_credit":"0","mortgage":"1","credit_rebuy":"0","life_insurance":"0","car_insurance":"1","home_insurance":"1","other_insurance":"0","stock":"1","mean":92,"eval_data":[{"label":"Service client","description":"bla bli blo blou","note":"80"},{"label":"Application","description":"ds;lfk dslk fsd kfd;lskf","note":"95"},{"label":"Carte de credit","description":"sd sf dsf dsg dsfd","note":"100"}],"id":245},"93":{"name":"Monabanq","title":"","address":null,"icon":null,"image":null,"holding_image":null,"review_link":null,"review_link_text":null,"holding_label":null,"holding_name":null,"customer_count_label":null,"customer_count":null,"welcome_offer":null,"minimum_wadge":null,"credit_card":null,"young_offer":0,"prof_account":0,"saving_account":0,"revolving_credit":0,"mortgage":0,"credit_rebuy":0,"life_insurance":0,"car_insurance":0,"home_insurance":0,"other_insurance":0,"stock":0,"mean":93,"eval_data":[{"label":"Service Client","description":"jkhjgd tg fgdfg","note":"100"},{"label":"Application","description":"sd sd","note":"100"},{"label":"Carte de credit","description":"khjkhj ksd sdasda","note":"80"}],"id":241}}';
  ?>
  </body>
- <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
-    <a title="Go to %ftitle%." href="%link%" itemprop="url">
-      <span itemprop="title"><span property="name">%htitle%</span></span>
-    </a>
-    <meta property="position" content="%position%">
-  </span>
- </html>
+ 
