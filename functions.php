@@ -21,11 +21,11 @@ function suprmagpro_child_enqueue_styles()
     wp_register_script('tether-js', '//cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js', array('jquery'), null, true);
     wp_register_style('bootstrap-css', '//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css', false, null, 'all');
 
-    // if (defined('WP_DEBUG') && true === WP_DEBUG) {
-    //     wp_register_script('vue-js', $template_directory . '/assets/js/vue.js', array(), null, true);
-    // } else {
-    //     wp_register_script('vue-js', $template_directory . '/assets/js/vue.min.js', array(), null, true);
-    // }
+    if (defined('WP_DEBUG') && true === WP_DEBUG) {
+        wp_register_script('vue-js', $template_directory . '/assets/js/vue.js', array(), null, true);
+    } else {
+        wp_register_script('vue-js', $template_directory . '/assets/js/vue.min.js', array(), null, true);
+    }
 
     wp_register_script('main-js', $template_directory.'/main.js', null, null, true);
 
@@ -42,20 +42,20 @@ function suprmagpro_child_enqueue_styles()
     wp_enqueue_style('supermagpro-child-style', $template_directory. '/style.css', array( $parent_style ));
 }
 
-// function endsWith($haystack, $needle)
-// {
-//     $length = strlen($needle);
-//     if ($length == 0) {
-//         return true;
-//     }
-//     return (substr($haystack, -$length) === $needle);
-// }
+function endsWith($haystack, $needle)
+{
+    $length = strlen($needle);
+    if ($length == 0) {
+        return true;
+    }
+    return (substr($haystack, -$length) === $needle);
+}
 
-// function defer_parsing_of_js ( $url ) {
-//     return endsWith($url, "vue.js") || endsWith($url, "vue.min.js") ? "$url' defer " : $url;
-// }
+function defer_parsing_of_js ( $url ) {
+    return endsWith($url, "vue.js") || endsWith($url, "vue.min.js") ? "$url' async " : $url;
+}
 
-// add_filter( 'clean_url', 'defer_parsing_of_js', 11, 1 );
+add_filter( 'clean_url', 'defer_parsing_of_js', 11, 1 );
 
 add_action('wp_enqueue_scripts', 'suprmagpro_child_enqueue_styles', 15);
 
