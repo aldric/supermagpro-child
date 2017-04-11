@@ -1,5 +1,7 @@
 <?php
 
+define('__STYLE__', 'bs3');
+
 //Dequeue JavaScripts
 function project_dequeue_unnecessary_scripts()
 {
