@@ -120,9 +120,7 @@ div.ranking-widget dl, div.ranking-widget dt {
 div.ranking-widget dl, div.ranking-widget div.pb-4.mb-2, div.ranking-widget div.card-header {
   border-bottom: 1px solid rgba(0,0,0,.125);
 }
-[v-cloak] {
-  display: none;
-}
+
 ul.rating-green {
   color: #5cb85c;text-align:center;
 }
