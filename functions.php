@@ -10,7 +10,7 @@ function project_dequeue_unnecessary_scripts()
     wp_deregister_script('supermag-custom');
 }
 
-add_action('wp_enqueue_scripts', 'project_dequeue_unnecessary_scripts',100);
+add_action('wp_enqueue_scripts', 'project_dequeue_unnecessary_scripts', 100);
 
 function suprmagpro_child_enqueue_styles()
 {
@@ -46,12 +46,6 @@ function endsWith($haystack, $needle)
     }
     return (substr($haystack, -$length) === $needle);
 }
-
-// function defer_parsing_of_js ( $url ) {
-//     return endsWith($url, "vue.js") || endsWith($url, "vue.min.js") ? "$url' async " : $url;
-// }
-//
-// add_filter( 'clean_url', 'defer_parsing_of_js', 11, 1 );
 
 add_action('wp_enqueue_scripts', 'suprmagpro_child_enqueue_styles', 15);
 
