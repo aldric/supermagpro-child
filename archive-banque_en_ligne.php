@@ -17,25 +17,25 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
-			<?php 
-			$banks_query = new WP_Query( array( 'post_type' => 'banque_en_ligne', 'p' => 372 ) );
-			while ( $banks_query->have_posts() ) : $banks_query->the_post(); 
-			?>
-				<?php get_template_part( 'template-parts/content', 'banque_comparatif' ); ?>
+			<?php
+            $banks_query = new WP_Query(array( 'post_type' => 'banque_en_ligne', 'p' => 372 ));
+            while ($banks_query->have_posts()) : $banks_query->the_post();
+            ?>
+				<?php get_template_part('template-parts/content', 'banque_comparatif'); ?>
 
 				<?php
-					// If comments are open or we have at least one comment, load up the comment template.
-					if ( comments_open() || get_comments_number() ) :
-						comments_template();
-					endif;
-				?>
+                    // If comments are open or we have at least one comment, load up the comment template.
+                    if (comments_open() || get_comments_number()) :
+                        comments_template();
+                    endif;
+                ?>
 
-			<?php endwhile; // End of the loop. 
-			wp_reset_postdata();
-			?>
+			<?php endwhile; // End of the loop.
+            wp_reset_postdata();
+            ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
-<?php get_sidebar( 'left' ); ?>
+<?php get_sidebar('left'); ?>
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>
