@@ -286,10 +286,11 @@ $custom_css .= "
 /* menu hover color*/
 $custom_css .= "
         .supermag-mega-menu-con-wrap,
-        .header-wrapper .menu li:hover > a,
+        .header-wrapper .menu li:hover ,
         .header-wrapper .supermag_mega_menu.menu .mega-sub-menu li.menu-item-inner-mega .supermag-mega-menu-cat-wrap a.mega-active-cat{
-            background: {$supermag_menu_hover_bg_color};
+            background-color: {$supermag_menu_hover_bg_color};
         }";
+
 $custom_css .= "
         .supermag_mega_menu .header-wrapper .main-navigation ul ul.sub-menu li:hover > a,
         .icon-menu:hover,
