@@ -127,3 +127,6 @@ ul.rating-green {
 ul.rating {
   color: #ffa000;text-align:center;
 }
+.header-wrapper ul.sub-menu li a {
+    font-size: 12px;
+}
