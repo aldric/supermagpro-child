@@ -15,7 +15,7 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
+	<div id="" class="content-area">
 		<main id="main" class="site-main">
 			<?php
             $banks_query = new WP_Query(array( 'post_type' => 'banque_en_ligne', 'p' => 372 ));
@@ -36,6 +36,5 @@ get_header(); ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
-<?php get_sidebar('left'); ?>
-<?php get_sidebar(); ?>
+
 <?php get_footer(); ?>
