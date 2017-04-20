@@ -130,3 +130,11 @@ ul.rating {
 .header-wrapper ul.sub-menu li a {
     font-size: 12px;
 }
+
+.header-wrapper .main-navigation ul ul ul.sub-menu {
+    top: inherit;
+    margin-top: -48px;
+}
+.error404 #primary .not-found {
+  padding-top: 0;
+}
