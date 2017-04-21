@@ -138,3 +138,9 @@ ul.rating {
 .error404 #primary .not-found {
   padding-top: 0;
 }
+
+.error404 a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, button.list-group-item:hover, .list-group-item.active:hover {
+   background-color: #f13600;
+   border-color: #002e6e;
+   color:white;
+}
