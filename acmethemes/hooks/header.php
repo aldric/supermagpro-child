@@ -50,6 +50,7 @@ if ( ! function_exists( 'supermag_before_wp_head' ) ) :
 
     function supermag_before_wp_head() {
         ?>
+        <!-- TradeDoubler site verification 2973410 -->
         <meta charset="<?php bloginfo( 'charset' ); ?>">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="profile" href="<?php echo esc_url('http://gmpg.org/xfn/11')?>">
