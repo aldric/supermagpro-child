@@ -1,6 +1,6 @@
 <?php
 
-define('__STYLE__', 'bs3');
+//define('__STYLE__', 'bs3');
 
 //Dequeue JavaScripts
 function project_dequeue_unnecessary_scripts()
@@ -35,8 +35,8 @@ function suprmagpro_child_enqueue_styles()
     wp_enqueue_script('custom-agt-js');
     wp_enqueue_style('bootstrap-css');
     $parent_style = 'supermagpro-parent-style';
-    wp_enqueue_style($parent_style, get_template_directory_uri() . '/style.css');
-    wp_enqueue_style('supermagpro-child-style', $template_directory. '/style.css', array( $parent_style ));
+    wp_enqueue_style($parent_style, get_template_directory_uri() . '/style.css', null, '1.0.1');
+   // wp_enqueue_style('supermagpro-child-style', $template_directory. '/style.css', array( $parent_style ), "1.1.2");
 }
 
 function endsWith($haystack, $needle)

@@ -1,0 +1,50 @@
+{
+    "key": "group_58b037a0175df",
+    "title": "Comparatif des banques automatique - Choix template",
+    "fields": [
+        {
+            "key": "field_58b0341f75869",
+            "label": "Comparatif template",
+            "name": "comparatif_template",
+            "type": "select",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "template-1": "template-1"
+            },
+            "default_value": [
+                "template-1"
+            ],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post",
+                "operator": "==",
+                "value": "372"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1506464303
+}

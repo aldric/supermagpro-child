@@ -111,7 +111,8 @@ li.menu-boursorama,
 li.menu-fortuneo,
 li.menu-hellobank,
 li.menu-ingdirect,
-li.menu-monabanq {
+li.menu-monabanq,
+li.menu-bankin {
   padding-left: 37px;
 }
 div.ranking-widget dl, div.ranking-widget dt {
@@ -143,4 +144,72 @@ ul.rating {
    background-color: #f13600;
    border-color: #002e6e;
    color:white;
+}
+
+li.menu-bforbank {
+    background-image: url('menu/32x32/bforbank.png');
+    background-repeat: no-repeat;
+    background-position: 5px;
+    background-position-y: center;
+}
+
+li.menu-boursorama {
+    background-image: url('menu/32x32/boursorama.png');
+    background-repeat: no-repeat;
+    background-position: 5px;
+    background-position-y: center;
+}
+
+li.menu-fortuneo {
+  background-image: url('menu/32x32/fortuneo.png');
+  background-repeat: no-repeat;
+  background-position: 5px;
+  background-position-y: center;
+}
+
+li.menu-hellobank {
+  background-image: url('menu/32x32/hellobank.png');
+  background-repeat: no-repeat;
+  background-position: 5px;
+  background-position-y: center;
+}
+
+li.menu-ingdirect {
+  background-image: url('menu/32x32/ingdirect.png');
+  background-repeat: no-repeat;
+  background-position: 5px;
+  background-position-y: center;
+}
+li.menu-monabanq {
+  background-image: url('menu/32x32/monabanq.png');
+  background-repeat: no-repeat;
+  background-position: 5px;
+  background-position-y: center;
+}
+li.menu-bankin {
+  background-image: url("menu/32x32/bankin.png");
+  background-repeat: no-repeat;
+  background-position: 5px;
+  background-position-y: center;
+}
+li.menu-comp:before {    
+  font-family: 'FontAwesome';
+  content: '\f002';
+  margin:0 5px 0 -15px;
+  color: #f00;
+}
+li.default-cursor > a:first-child {
+  cursor : default;
+}
+ul.featured-entries-col.featured-entries.featured-acme-col-posts figure.widget-image {
+ text-align: center;
+}
+.featured-entries-col .widget-image img {
+  max-height: 170px;
+  width: auto;
+}
+.header-image.float-right {
+  text-align: right;
+  width: 68%;
+  padding-top: 10px;
 }

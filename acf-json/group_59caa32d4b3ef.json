@@ -1,0 +1,219 @@
+{
+    "key": "group_59caa32d4b3ef",
+    "title": "Liste des boutons d'affiliation",
+    "fields": [
+        {
+            "key": "field_59caa3359d0aa",
+            "label": "Bouton d'affiliation",
+            "name": "affiliate_button",
+            "type": "repeater",
+            "instructions": "Permet de définir les bouton rétulisable dans le site.\r\nUtilisation : [maxbutton name=\"nom du bouton\"]",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "field_59caab7a9d0ab",
+            "min": 0,
+            "max": 0,
+            "layout": "block",
+            "button_label": "Ajouter un bouton",
+            "sub_fields": [
+                {
+                    "key": "field_59caab7a9d0ab",
+                    "label": "Nom du bouton",
+                    "name": "name",
+                    "type": "text",
+                    "instructions": "Identifiant du bouton. Utiliser pour afficher le bouton dans les pages. Faire attention si l'on change cette valeur et que le bouton est déja utilisé",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_59caabab9d0ac",
+                    "label": "URL",
+                    "name": "url",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_59cab3138a244",
+                    "label": "Texte",
+                    "name": "text",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_59cab3128a243",
+                    "label": "Titre (title)",
+                    "name": "title",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_59caabf19d0ad",
+                    "label": "Ouvrir dans une nouvelle fenetre",
+                    "name": "new_window",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 1,
+                    "ui": 1,
+                    "ui_on_text": "Oui",
+                    "ui_off_text": "Non"
+                },
+                {
+                    "key": "field_59caac479d0ae",
+                    "label": "Utiliser rel=\"nofollow\"",
+                    "name": "nofollow",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 1,
+                    "ui": 1,
+                    "ui_on_text": "Oui",
+                    "ui_off_text": "Non"
+                },
+                {
+                    "key": "field_59caaca09d0af",
+                    "label": "Type de bouton",
+                    "name": "type",
+                    "type": "radio",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "btn-default": "Defaut",
+                        "btn-primary": "Bleu",
+                        "btn-success": "Vert",
+                        "btn-info": "Bleu clair",
+                        "btn-warning": "Orange",
+                        "btn-danger": "Rouge",
+                        "btn-link": "Lien",
+                        "btn-orange": "Orange Custom",
+                        "btn-mona": "Monabanq",
+                        "btn-b4bank": "B4Bank",
+                        "btn-boursorama": "Boursorama",
+                        "btn-hellobank": "Hellobank"
+                    },
+                    "allow_null": 0,
+                    "other_choice": 0,
+                    "save_other_choice": 0,
+                    "default_value": "btn-default",
+                    "layout": "vertical",
+                    "return_format": "value"
+                },
+                {
+                    "key": "field_59caae1d9d0b0",
+                    "label": "Taille de bouton",
+                    "name": "size",
+                    "type": "radio",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "btn-ns": "Normal",
+                        "btn-xs": "Super petit",
+                        "btn-small": "Petit",
+                        "btn-lg": "Grand"
+                    },
+                    "allow_null": 0,
+                    "other_choice": 0,
+                    "save_other_choice": 0,
+                    "default_value": "btn-ns",
+                    "layout": "vertical",
+                    "return_format": "value"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-liste-boutons"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1507367703
+}
