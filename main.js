@@ -27,20 +27,4 @@ var BreadcrumbGenerator = function() {
 jQuery(document).on('ready', function() {
     var breadcrumbGenerator = new BreadcrumbGenerator();
     breadcrumbGenerator.createJsonLdTag();
-
-    jQuery('nav#site-navigation.main-navigation').css({
-        "position": "fixed",
-        "top": "0",
-        "width": "100%",
-        "z-index": '999',
-        'left': '0'
-    });
-
-    jQuery('body').css({
-        "padding-top": "50px"
-    });
-    //jQuery('.supermag-enable-sticky-menu .header-main-menu').width(main_navigation_width);
-    //jQuery('.supermag-enable-sticky-menu .header-main-menu').css('margin', '0 auto');
-    //jQuery('.sm-up-container').show();
-
 });
