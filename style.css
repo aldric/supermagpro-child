@@ -190,7 +190,9 @@ li.menu-obank,
 li.menu-news,
 li.menu-comp,
 li.menu-azimo,
-li.menu-revolut {
+li.menu-revolut,
+li.menu-grisbee,
+li.menu-ca {
   padding-left: 37px;
   background-repeat: no-repeat;
   background-position: 5px;
@@ -283,6 +285,14 @@ li.menu-azimo {
 
 li.menu-revolut {
   background-image: url("menu/32x32/revolut.png");
+}
+
+li.menu-grisbee {
+  background-image: url("menu/32x32/grisbee.png");
+}
+
+li.menu-ca {
+  background-image: url("menu/32x32/credit-agricole.png");
 }
 
 li.default-cursor>a:first-child {
