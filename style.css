@@ -192,7 +192,8 @@ li.menu-comp,
 li.menu-azimo,
 li.menu-revolut,
 li.menu-grisbee,
-li.menu-ca {
+li.menu-ca,
+li.menu-cm {
   padding-left: 37px;
   background-repeat: no-repeat;
   background-position: 5px;
@@ -293,6 +294,9 @@ li.menu-grisbee {
 
 li.menu-ca {
   background-image: url("menu/32x32/credit-agricole.png");
+}
+li.menu-cm {
+  background-image: url("menu/32x32/credit-mutuel.png");
 }
 
 li.default-cursor>a:first-child {
