@@ -116,7 +116,7 @@ div.breadcrumb-container span[property="name"] {
   padding: 0;
   margin-top: -3px;
   vertical-align: middle;
-  max-width: 160px;
+  max-width: 300px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -194,7 +194,8 @@ li.menu-revolut,
 li.menu-grisbee,
 li.menu-anytime,
 li.menu-ca,
-li.menu-cm {
+li.menu-cm,
+li.menu-hush {
   padding-left: 37px;
   background-repeat: no-repeat;
   background-position: 5px;
@@ -302,6 +303,9 @@ li.menu-cm {
 }
 li.menu-anytime {
   background-image: url("menu/32x32/anytime.png");
+}
+li.menu-hush {
+  background-image: url("menu/32x32/hush.png");
 }
 li.default-cursor>a:first-child {
   cursor: default;

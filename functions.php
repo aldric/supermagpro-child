@@ -6,8 +6,13 @@
 function project_dequeue_unnecessary_scripts()
 {
     wp_dequeue_script('supermag-custom');
-    wp_dequeue_style('fontawesome');
     wp_deregister_script('supermag-custom');
+
+    wp_dequeue_style('fontawesome');
+    wp_deregister_style('fontawesome');
+
+    wp_dequeue_style('supermag-style');
+    wp_deregister_style('supermag-style');
 }
 
 add_action('wp_enqueue_scripts', 'project_dequeue_unnecessary_scripts', 100);
@@ -20,6 +25,9 @@ function suprmagpro_child_enqueue_styles()
     wp_register_script('bootstrap-js', '//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', array('jquery'), null, true);
     wp_register_style('bootstrap-css', '//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', false, null, 'all');
     wp_register_script('fontawesome-async', '//use.fontawesome.com/f93bfa54b2.js', null, '4.7.0');
+
+    wp_register_style( 'supermagpro-parent-style', get_template_directory_uri() . '/style.css', null, '1.0.2');
+    wp_register_style( 'supermagpro-child-style',$template_directory. '/style.css',null, "1.1.2");
 
     if (defined('WP_DEBUG') && true === WP_DEBUG) {
         wp_register_script('vue-js', $template_directory . '/assets/js/vue.js', array(), null, true);
@@ -34,9 +42,10 @@ function suprmagpro_child_enqueue_styles()
     wp_enqueue_script('main-js');
     wp_enqueue_script('custom-agt-js');
     wp_enqueue_style('bootstrap-css');
-    $parent_style = 'supermagpro-parent-style';
-    wp_enqueue_style($parent_style, get_template_directory_uri() . '/style.css', null, '1.0.2');
-    wp_enqueue_style('supermagpro-child-style', $template_directory. '/style.css', array( $parent_style ), "1.1.2");
+    wp_enqueue_style('supermagpro-parent-style');
+    wp_enqueue_style('supermagpro-child-style');
+     $supermag_hooks_dynamic_css_file_path = supermag_file_directory('acmethemes/hooks/dynamic-css.php');
+     require $supermag_hooks_dynamic_css_file_path;
 }
 
 function endsWith($haystack, $needle)
@@ -61,3 +70,28 @@ if (function_exists('register_sidebar')) {
         'after_title' => '</h3>',
     ));
 }
+add_filter( 'emoji_svg_url', '__return_false' );
+
+function disable_emojicons_tinymce( $plugins ) {
+    if ( is_array( $plugins ) ) {
+      return array_diff( $plugins, array( 'wpemoji' ) );
+    } else {
+      return array();
+    }
+  }
+
+function disable_wp_emojicons() {
+    
+      // all actions related to emojis
+      remove_action( 'admin_print_styles', 'print_emoji_styles' );
+      remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+      remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+      remove_action( 'wp_print_styles', 'print_emoji_styles' );
+      remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
+      remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
+      remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
+    
+      // filter to remove TinyMCE emojis
+      add_filter( 'tiny_mce_plugins', 'disable_emojicons_tinymce' );
+    }
+    add_action( 'init', 'disable_wp_emojicons' );

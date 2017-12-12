@@ -31,7 +31,7 @@ do_action( 'supermag_action_before_head' );?>
 
 		wp_head();
 		?>
-
+	<!-- W3TC-include-css -->
 	</head>
 <body <?php body_class();
 /**
