@@ -1,6 +1,31 @@
 <?php
 
-//define('__STYLE__', 'bs3');
+add_filter( 'feed_links_show_comments_feed', '__return_false' ); 
+
+if ( !function_exists( 'mypace_remove_single_comments_feed' ) ){
+	function mypace_remove_single_comments_feed(){
+		return;
+	}
+	add_filter( 'post_comments_feed_link', 'mypace_remove_single_comments_feed' );
+}
+
+if( !function_exists( 'mypace_comments_feed_404' ) ){
+	function mypace_comments_feed_404( $object ) {
+		if ( $object->is_comment_feed ) {
+			wp_die( 'Page not found.', '', array(
+				'response'  => 404,
+				'back_link' => true,
+			));
+		}
+	}
+	add_action( 'parse_query', 'mypace_comments_feed_404' );
+}
+
+function mypace_load_textdomain() {
+	load_plugin_textdomain( 'mypace-remove-comments-feed-link' ); 
+}
+add_action( 'plugins_loaded', 'mypace_load_textdomain' );
+
 
 //Dequeue JavaScripts
 function project_dequeue_unnecessary_scripts()
