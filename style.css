@@ -195,7 +195,8 @@ li.menu-grisbee,
 li.menu-anytime,
 li.menu-ca,
 li.menu-cm,
-li.menu-hush {
+li.menu-hush,
+li.menu-n26 {
   padding-left: 37px;
   background-repeat: no-repeat;
   background-position: 5px;
@@ -307,6 +308,9 @@ li.menu-anytime {
 li.menu-hush {
   background-image: url("menu/32x32/hush.png");
 }
+li.menu-n26 {
+  background-image: url("menu/32x32/n26.png");
+}
 li.default-cursor>a:first-child {
   cursor: default;
 }
@@ -374,4 +378,25 @@ div.nav-links .widget-image img {
   padding-bottom: 2px;
   text-align: center;
   vertical-align: middle;
+}
+main.archive-cards article {
+  transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1);
+  display: block;
+  position: relative;
+  padding: 16px;
+  margin: 16px 0;
+  border-radius: 2px;
+  background-color: #f0f0f0;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12)
+}
+main.archive-cards article a.read-more {
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
+  width: auto;
+  text-decoration: none;
+}
+main.archive-cards article a.read-more:hover {
+  text-decoration: none;
+}
+.blog-alternate-image article .post-thumb {
+  max-height: 110px;
 }
