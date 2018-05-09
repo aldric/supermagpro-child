@@ -55,6 +55,7 @@
                 "operator": "==",
                 "value": "agt_bank_ranking"
             }
+<<<<<<< HEAD
         ],
         [
             {
@@ -62,6 +63,8 @@
                 "operator": "==",
                 "value": "agt_bank_offer"
             }
+=======
+>>>>>>> cea54a36012baedac9406a8c58e83d8b5334cf8b
         ]
     ],
     "menu_order": 0,
@@ -72,5 +75,9 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
+<<<<<<< HEAD
     "modified": 1522853073
+=======
+    "modified": 1506464222
+>>>>>>> cea54a36012baedac9406a8c58e83d8b5334cf8b
 }

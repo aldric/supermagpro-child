@@ -7,7 +7,7 @@
             "label": "Bouton d'affiliation",
             "name": "affiliate_button",
             "type": "repeater",
-            "instructions": "Permet de définir les bouton rétulisable dans le site.\r\nUtilisation : [aff-button name=\"nom du bouton\"]",
+            "instructions": "Permet de définir les bouton rétulisable dans le site.\r\nUtilisation : [maxbutton name=\"nom du bouton\"]",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
