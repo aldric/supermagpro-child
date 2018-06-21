@@ -60,11 +60,13 @@ function suprmagpro_child_enqueue_styles()
         wp_register_script('vue-js', $template_directory . '/assets/js/vue.min.js', array(), null, true);
     }
     wp_register_script('main-js', $template_directory.'/main.js', array('jquery'), null, true);
+    wp_register_script('cookie-js', $template_directory.'/Tag_google_analytics.js',null, null, true);
 
     wp_enqueue_script('bootstrap-js');
     wp_enqueue_script('fontawesome-async');
     wp_enqueue_script('vue-js');
     wp_enqueue_script('main-js');
+    wp_enqueue_script('cookie-js');
     wp_enqueue_script('custom-agt-js');
     wp_enqueue_style('bootstrap-css');
     wp_enqueue_style('supermagpro-parent-style');
