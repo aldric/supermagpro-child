@@ -196,7 +196,8 @@ li.menu-anytime,
 li.menu-ca,
 li.menu-cm,
 li.menu-hush,
-li.menu-n26 {
+li.menu-n26,
+li.menu-bunq {
   padding-left: 37px;
   background-repeat: no-repeat;
   background-position: 5px;
@@ -310,6 +311,9 @@ li.menu-hush {
 }
 li.menu-n26 {
   background-image: url("menu/32x32/n26.png");
+}
+li.menu-bunq {
+  background-image: url("menu/32x32/bunq.png");
 }
 li.default-cursor>a:first-child {
   cursor: default;
